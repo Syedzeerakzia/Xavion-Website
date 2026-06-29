@@ -5,5 +5,5 @@ export interface Statistic {
 
   label: string;
 
-  icon?: string;
+  description?: string;
 }
