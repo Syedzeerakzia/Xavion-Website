@@ -1,121 +1,135 @@
 import { PortfolioProject } from "@/types/portfolio";
 
 export const portfolio: PortfolioProject[] = [
-    {
-        id: 1,
-        title: "CRM Migration & Sales Automation",
-        slug: "crm-migration-sales-automation",
+  {
+    id: 1,
+    title: "HubSpot to GoHighLevel Migration",
+    slug: "hubspot-to-gohighlevel-migration",
 
-        description:
-            "Migrated a growing real estate agency from spreadsheets to GoHighLevel with automated lead nurturing and pipeline management.",
+    description:
+      "Migrated an e-commerce company from HubSpot to GoHighLevel while preserving existing automations and significantly reducing CRM costs.",
 
-        client: "Prime Realty",
-        industry: "Real Estate",
+    client: "Confidential",
+    industry: "E-Commerce",
 
-        thumbnail: "/images/portfolio/crm-migration-thumb.jpg",
-        heroImage: "/images/portfolio/crm-migration.jpg",
+    thumbnail: "/images/portfolio/hubspot-ghl-thumb.jpg",
+    heroImage: "/images/portfolio/hubspot-ghl.jpg",
 
-        technologies: [
-            "GoHighLevel",
-            "Zapier",
-            "Twilio",
-            "Google Sheets",
-        ],
+    technologies: [
+      "GoHighLevel",
+      "HubSpot",
+      "Zapier",
+      "Twilio",
+    ],
 
-        challenge:
-            "The client relied on manual spreadsheets and inconsistent follow-ups, causing lost leads and delayed responses.",
+    challenge:
+      "The client faced high CRM subscription costs and wanted to migrate to GoHighLevel without disrupting their existing sales and marketing automations.",
 
-        solution:
-            "Built a fully automated CRM system with lead capture, SMS/email follow-ups, pipeline automation, and appointment scheduling.",
+    solution:
+      "Planned and executed a complete CRM migration, recreated workflows, migrated contacts and pipelines, integrated SMS and email automation, and thoroughly tested every automation before launch.",
 
-        results: [
-            "40% increase in lead conversion",
-            "75% reduction in manual work",
-            "Centralized sales pipeline",
-        ],
+    results: [
+      "80% reduction in CRM costs",
+      "100% automation continuity",
+      "Successful zero-downtime migration",
+    ],
 
-        duration: "4 Weeks",
+    duration: "4 Weeks",
 
-        featured: true,
-        categories: ["CRM", "GoHighLevel", "Automation"]
-    },
+    featured: true,
 
-    {
-        id: 2,
-        title: "AI Customer Support Agent",
-        slug: "ai-customer-support-agent",
+    categories: [
+      "GHL",
+      "CRM Migration",
+      "CRM",
+    ],
+  },
 
-        description:
-            "Designed an AI-powered support assistant using ChatGPT that answered customer inquiries, qualified leads, and integrated with CRM workflows.",
+  {
+    id: 2,
+    title: "Lead Capture & WhatsApp AI",
+    slug: "lead-capture-whatsapp-ai",
 
-        client: "Nova Digital",
-        industry: "Marketing Agency",
+    description:
+      "Built an intelligent lead qualification system connecting web forms, n8n, Airtable, WhatsApp, and AI for automated conversations.",
 
-        thumbnail: "/images/portfolio/ai-agent-thumb.jpg",
-        heroImage: "/images/portfolio/ai-agent.jpg",
+    client: "Marketing Agency",
+    industry: "Marketing",
 
-        technologies: [
-            "OpenAI",
-            "n8n",
-            "WhatsApp API",
-            "GoHighLevel",
-        ],
+    thumbnail: "/images/portfolio/lead-ai-thumb.jpg",
+    heroImage: "/images/portfolio/lead-ai.jpg",
 
-        challenge:
-            "The agency struggled with high support volume and slow response times outside business hours.",
+    technologies: [
+      "n8n",
+      "OpenAI",
+      "WhatsApp API",
+      "Airtable",
+    ],
 
-        solution:
-            "Developed an AI support agent capable of answering FAQs, booking appointments, qualifying prospects, and syncing conversations to the CRM.",
+    challenge:
+      "The client needed instant lead engagement and multilingual conversations without increasing support staff.",
 
-        results: [
-            "24/7 customer support",
-            "60% faster response times",
-            "Reduced support workload by 50%",
-        ],
+    solution:
+      "Created an automation pipeline where website forms trigger n8n workflows, store data in Airtable, and launch an AI-powered WhatsApp assistant capable of qualifying leads in multiple languages.",
 
-        duration: "3 Weeks",
+    results: [
+      "Instant lead qualification",
+      "Multi-language AI conversations",
+      "Automated CRM-ready lead collection",
+    ],
 
-        featured: true,
-        categories: ["CRM", "GoHighLevel", "Automation"]
-    },
+    duration: "3 Weeks",
 
-    {
-        id: 3,
-        title: "Business Workflow Automation",
-        slug: "business-workflow-automation",
+    featured: true,
 
-        description:
-            "Automated finance, HR, and project management workflows by integrating multiple SaaS platforms through n8n and Make.",
+    categories: [
+      "n8n",
+      "AI",
+      "WhatsApp",
+    ],
+  },
 
-        client: "Vertex Solutions",
-        industry: "SaaS",
+  {
+    id: 3,
+    title: "Multi-Step Lead Nurture Workflow",
+    slug: "multi-step-lead-nurture-workflow",
 
-        thumbnail: "/images/portfolio/workflow-thumb.jpg",
-        heroImage: "/images/portfolio/workflow.jpg",
+    description:
+      "Designed a 12-step GoHighLevel nurture sequence combining email and SMS automation to improve lead conversion.",
 
-        technologies: [
-            "n8n",
-            "Make",
-            "Slack",
-            "Airtable",
-            "Notion",
-        ],
+    client: "Real Estate Agency",
+    industry: "Real Estate",
 
-        challenge:
-            "Internal teams spent hours each week manually transferring data between tools, leading to delays and errors.",
+    thumbnail: "/images/portfolio/nurture-workflow-thumb.jpg",
+    heroImage: "/images/portfolio/nurture-workflow.jpg",
 
-        solution:
-            "Implemented automated workflows for employee onboarding, project updates, notifications, reporting, and database synchronization.",
+    technologies: [
+      "GoHighLevel",
+      "Twilio",
+      "Mailgun",
+      "Automation",
+    ],
 
-        results: [
-            "80+ hours saved monthly",
-            "Automated 20+ workflows",
-            "Improved operational efficiency",
-        ],
+    challenge:
+      "Leads frequently went cold due to inconsistent follow-ups and manual outreach processes.",
 
-        duration: "5 Weeks",
+    solution:
+      "Implemented a fully automated 12-step nurture campaign with personalized email, SMS reminders, behavior-based triggers, and appointment booking automation.",
 
-        featured: true,
-        categories: ["CRM", "GoHighLevel", "Automation"]
-    },
+    results: [
+      "40% increase in conversions",
+      "Automated email & SMS follow-ups",
+      "Consistent lead nurturing at scale",
+    ],
+
+    duration: "3 Weeks",
+
+    featured: true,
+
+    categories: [
+      "GHL",
+      "Automation",
+      "Nurture",
+    ],
+  },
 ];

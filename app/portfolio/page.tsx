@@ -1,7 +1,13 @@
+import PortfolioHero from "@/components/portfolio/PortfolioHero";
+import PortfolioFilters from "@/components/portfolio/PortfolioFilters";
+import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
+
 export default function PortfolioPage() {
   return (
-    <div>
-      Portfolio Page
-    </div>
+    <>
+      <PortfolioHero />
+      <PortfolioFilters />
+      <PortfolioGrid />
+    </>
   );
 }

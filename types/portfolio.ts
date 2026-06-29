@@ -1,21 +1,20 @@
 export interface PortfolioProject {
   id: number;
 
-  slug: string;
-
   title: string;
+  slug: string;
 
   description: string;
 
   client: string;
-
   industry: string;
 
   thumbnail: string;
-
   heroImage: string;
 
   technologies: string[];
+
+  categories: string[];
 
   challenge: string;
 
@@ -26,6 +25,4 @@ export interface PortfolioProject {
   duration: string;
 
   featured: boolean;
-
-  categories: ["CRM", "GoHighLevel", "Automation"]
 }
