@@ -27,10 +27,10 @@ export default function ServiceCard({ service }: ServiceCardProps) {
             <ul className="mt-6 space-y-2">
                 {service.features.slice(0, 3).map((feature) => (
                     <li
-                        key={feature}
+                        key={feature.title}
                         className="flex items-center gap-2 text-sm text-gray-300"
                     >
-                        ✓ {feature}
+                        ✓ {feature.title}
                     </li>
                 ))}
             </ul>

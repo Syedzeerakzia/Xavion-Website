@@ -1,5 +1,10 @@
 import { TablerIcon } from "@tabler/icons-react";
 
+export interface ServiceFeature {
+  title: string;
+  description?: string;
+}
+
 export interface Service {
     id: number;
     title: string;
@@ -7,7 +12,7 @@ export interface Service {
     description: string;
     shortDescription: string;
     icon: TablerIcon;
-    features: string[];
+    features: ServiceFeature[];
     featured: boolean;
     image: string;
     cta: string;
