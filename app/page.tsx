@@ -4,10 +4,13 @@ import FeaturedPortfolio from "@/components/home/FeaturedPortfolio";
 
 export default function Home() {
   return (
-    <>
+    <main className="relative bg-black">
       <Hero />
-      <FeaturedServices />
-      <FeaturedPortfolio />
-    </>
+
+      <div className="relative z-10 rounded-t-[40px] bg-background">
+        <FeaturedServices />
+        <FeaturedPortfolio />
+       </div>
+    </main>
   );
 }
