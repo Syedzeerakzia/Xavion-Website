@@ -5,6 +5,7 @@ import "./globals.css";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,11 +26,13 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-black text-white antialiased`}
       >
-        <Header />
+        <SmoothScrollProvider>
+          <Header />
 
-        <main>{children}</main>
+          <main>{children}</main>
 
-        <Footer />
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
