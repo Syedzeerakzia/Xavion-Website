@@ -1,62 +1,123 @@
+"use client";
+
 import Link from "next/link";
-import { ButtonHTMLAttributes } from "react";
+import { motion, type HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/cn";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
-
 type ButtonSize = "sm" | "md" | "lg";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface BaseProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
-  href?: string;
+  className?: string;
+  bgColor?: string;
+  textColor?: string;
+  children?: React.ReactNode;
 }
 
+type ButtonAsLink = BaseProps &
+  HTMLMotionProps<"a"> & {
+    href: string;
+  };
+
+type ButtonAsButton = BaseProps &
+  HTMLMotionProps<"button"> & {
+    href?: undefined;
+  };
+
+type ButtonProps = ButtonAsLink | ButtonAsButton;
+
 const variants = {
-  primary:
-    "bg-primary hover:bg-hover text-white",
-
-  secondary:
-    "border border-primary text-primary hover:bg-primary hover:text-white",
-
-  ghost:
-    "text-white hover:bg-white/10",
+  primary: "",
+  secondary: "border",
+  ghost: "",
 };
 
 const sizes = {
   sm: "px-4 py-2 text-sm",
-
   md: "px-6 py-3 text-base",
-
   lg: "px-8 py-4 text-lg",
 };
 
-export default function Button({
-  children,
-  variant = "primary",
-  size = "md",
-  href,
-  className,
-  ...props
-}: ButtonProps) {
-  const classes = cn(
-    "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300",
-    variants[variant],
-    sizes[size],
-    className
-  );
+const MotionLink = motion.create(Link);
+
+export default function Button(props: ButtonProps) {
+  const {
+    children,
+    variant = "primary",
+    size = "md",
+    href,
+    className,
+    bgColor,
+    textColor,
+    ...rest
+  } = props;
+
+  const base =
+    "relative inline-flex items-center justify-center overflow-hidden rounded-lg font-medium transition-all duration-300";
+
+  const classes = cn(base, variants[variant], sizes[size], className);
+
+  // Only apply static bg/text color for non-animated variants
+  const style =
+    variant !== "secondary" && (bgColor || textColor)
+      ? {
+        backgroundColor: bgColor,
+        color: textColor,
+      }
+      : undefined;
+
+  const content =
+    variant === "secondary" ? (
+      <>
+        <motion.span
+          className="absolute inset-0"
+          style={{ backgroundColor: bgColor || "#ffffff" }}
+          variants={{ rest: { x: "-100%" }, hover: { x: "0%" } }}
+          transition={{ duration: 0.35, ease: "easeInOut" }}
+        />
+        <motion.span
+          className="relative z-10"
+          variants={{
+            rest: { color: "#ffffff" },
+            hover: { color: textColor || "#000000" },
+          }}
+          transition={{ duration: 0.35, ease: "easeInOut" }}
+        >
+          {children}
+        </motion.span>
+      </>
+    ) : (
+      children
+    );
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
-        {children}
-      </Link>
+      <MotionLink
+        href={href}
+        className={classes}
+        style={style}
+        initial="rest"
+        whileHover="hover"
+        animate="rest"
+        {...(rest as HTMLMotionProps<"a">)}
+      >
+        {content}
+      </MotionLink>
     );
   }
 
   return (
-    <button className={classes} {...props}>
-      {children}
-    </button>
+    <motion.button
+      className={classes}
+      style={style}
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      {...(rest as HTMLMotionProps<"button">)}
+    >
+      {content}
+    </motion.button>
   );
 }

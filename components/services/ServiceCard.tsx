@@ -9,7 +9,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ service }: ServiceCardProps) {
     const Icon = service.icon;
     return (
-        <Card className="flex h-full flex-col">
+        <Card className="flex h-full flex-col bg-linear-to-br from-slate-800/50 via-slate-900/50 to-slate-950/50 border border-white/5">
             <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10">
                 {/* Replace with Tabler Icon later */}
                 {/* <span className="text-3xl">⚡</span> */}
@@ -39,6 +39,8 @@ export default function ServiceCard({ service }: ServiceCardProps) {
                 <Button
                     href="/services"
                     variant="secondary"
+                    bgColor="#ffffff"
+                    textColor="#000000"
                     className="w-full"
                 >
                     Learn More
