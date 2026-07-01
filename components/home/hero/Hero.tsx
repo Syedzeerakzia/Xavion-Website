@@ -31,7 +31,12 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex gap-4 flex-wrap">
-            <Button href="/contact" size="lg">
+            <Button
+              href="/contact"
+              variant="secondary"
+              bgColor="#3B82F6"
+              textColor="#ffffff"
+              size="lg">
               Get Started
             </Button>
 

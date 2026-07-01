@@ -29,7 +29,7 @@ type ButtonAsButton = BaseProps &
 type ButtonProps = ButtonAsLink | ButtonAsButton;
 
 const variants = {
-  primary: "",
+  primary: "bg-blue-600 text-white shadow-md hover:bg-none transition-shadow duration-300",
   secondary: "border",
   ghost: "",
 };
@@ -55,7 +55,7 @@ export default function Button(props: ButtonProps) {
   } = props;
 
   const base =
-    "relative inline-flex items-center justify-center overflow-hidden rounded-lg font-medium transition-all duration-300";
+    "relative inline-flex items-center justify-center overflow-hidden rounded-lg font-medium transition-all duration-300 cursor-pointer";
 
   const classes = cn(base, variants[variant], sizes[size], className);
 
@@ -113,8 +113,14 @@ export default function Button(props: ButtonProps) {
       className={classes}
       style={style}
       initial="rest"
-      whileHover="hover"
       animate="rest"
+      whileHover="hover"
+      whileTap={{ scale: 0.97 }}
+      variants={{
+        rest: { scale: 1, y: 0 },
+        hover: { scale: 1.03, y: -2 },
+      }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
       {...(rest as HTMLMotionProps<"button">)}
     >
       {content}

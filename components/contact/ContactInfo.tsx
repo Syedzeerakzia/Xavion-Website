@@ -28,10 +28,10 @@ export default function ContactInfo() {
               <p className="font-medium">Email</p>
 
               <a
-                href="mailto:hello@xaviontech.com"
+                href="mailto:info@xaviontech.com"
                 className="text-gray-400 hover:text-primary"
               >
-                hello@xaviontech.com
+                info@xaviontech.com
               </a>
             </div>
           </div>
@@ -43,10 +43,10 @@ export default function ContactInfo() {
               <p className="font-medium">Phone</p>
 
               <a
-                href="tel:+923001234567"
+                href="tel:+923392000330"
                 className="text-gray-400 hover:text-primary"
               >
-                +92 300 1234567
+                +92 339 2000330
               </a>
             </div>
           </div>

@@ -22,6 +22,7 @@ export default function ServiceSection({
                 className={`grid items-center gap-16 lg:grid-cols-2 ${reverse ? "lg:[&>*:first-child]:order-2" : ""
                     }`}
             >
+                
                 {/* Content */}
                 <div>
                     <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10">

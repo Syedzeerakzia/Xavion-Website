@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
+
 
 import "./globals.css";
 
@@ -30,6 +32,7 @@ export default function RootLayout({
           <Header />
 
           <main>{children}</main>
+          <Toaster richColors position="top-right" />
 
           <Footer />
         </SmoothScrollProvider>

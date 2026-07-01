@@ -29,6 +29,7 @@ export default function Card({
         damping: 20,
       }}
     >
+      
       {children}
     </motion.div>
   );

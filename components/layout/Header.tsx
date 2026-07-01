@@ -3,6 +3,7 @@ import Container from "../ui/Container";
 import Logo from "@/components/shared/Logo";
 
 import { navigation } from "@/data/navigation";
+import Button from "../ui/Button";
 
 export default function Header() {
   return (
@@ -23,12 +24,14 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link
+        <Button
           href="/contact"
-          className="rounded-lg bg-blue-500 px-6 py-3 font-medium text-white transition hover:bg-blue-600"
+          variant="secondary"
+          bgColor="#3B82F6"
+          textColor="#ffffff"
         >
           Get Started
-        </Link>
+        </Button>
 
       </Container>
     </header>
